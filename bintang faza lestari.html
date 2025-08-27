@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV - Bintang Faza Lestari</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #ffe6f2;
+      color: #4b2e39;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      display: flex;
+      background: #fff0f5;
+      box-shadow: 0 8px 20px rgba(219, 112, 147, 0.2);
+      border-radius: 15px;
+      overflow: hidden;
+      min-height: 550px;
+    }
+
+    /* Left Section */
+    .left-section {
+      width: 35%;
+      background: #ffb6c1;
+      padding: 30px 25px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Klikable profile picture with hover effect */
+    .profile-pic a {
+      display: inline-block;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      width: 150px;
+      height: 150px;
+    }
+    .profile-pic a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 51, 119, 0.8);
+    }
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 50%;
+    }
+
+    .contact-info {
+      width: 100%;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 35px;
+      text-align: left;
+    }
+
+    .contact-info p {
+      margin: 10px 0;
+    }
+
+    /* Sosial Media */
+    .social-links {
+      margin-top: auto;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: #fff;
+      color: #ff3377;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 18px;
+      box-shadow: 0 4px 12px rgba(255, 51, 119, 0.3);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .social-links a:hover {
+      background: #ff3377;
+      color: #fff;
+      box-shadow: 0 6px 20px rgba(255, 51, 119, 0.6);
+    }
+
+    /* Skills */
+    .skills-section {
+      width: 100%;
+      text-align: center;
+    }
+
+    .skills-section h3 {
+      font-weight: 600;
+      font-size: 22px;
+      margin-bottom: 20px;
+      color: #fff;
+      letter-spacing: 1px;
+      text-shadow: 0 0 10px #ff5c97;
+    }
+
+    .skill {
+      margin-bottom: 18px;
+    }
+
+    .skill p {
+      margin-top: 10px;
+      font-weight: 600;
+      color: #fff;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+    }
+
+    canvas.circle {
+      width: 80px !important;
+      height: 80px !important;
+      display: block;
+      margin: auto;
+    }
+
+    /* Right Section */
+    .right-section {
+      width: 65%;
+      padding: 40px 40px 40px 50px;
+      color: #4b2e39;
+      overflow-y: auto;
+    }
+
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 2.8rem;
+      color: #d63384;
+      text-shadow: 0 0 5px #ff4d94;
+    }
+
+    .sub-title {
+      margin-top: 6px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: #ad2e6f;
+      letter-spacing: 1px;
+    }
+
+    section {
+      margin-top: 30px;
+    }
+
+    section h2 {
+      color: #d63384;
+      border-left: 5px solid #ff69b4;
+      padding-left: 10px;
+      font-weight: 700;
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      letter-spacing: 0.8px;
+    }
+
+    section p, section ul {
+      font-size: 1rem;
+      line-height: 1.6;
+      padding-left: 15px;
+      color: #63354a;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style-type: disc;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    /* Scroll bar for right section */
+    .right-section::-webkit-scrollbar {
+      width: 8px;
+    }
+    .right-section::-webkit-scrollbar-thumb {
+      background-color: #ff69b4;
+      border-radius: 4px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        max-width: 95%;
+      }
+      .left-section, .right-section {
+        width: 100%;
+      }
+      .right-section {
+        padding: 30px 20px;
+        max-height: none;
+      }
+    }
+  </style>
+  <!-- Icons dari FontAwesome CDN untuk sosial media -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="left-section">
+      <div class="profile-pic">
+        <a href="https://instagram.com/bintangfazalestari" target="_blank" rel="noopener noreferrer" title="Klik untuk buka Instagram">
+          <img src="faza.jpg" alt="Foto Profil" />
+        </a>
+      </div>
+      <div class="contact-info">
+        <p><strong>Email:</strong> bintangfazalestari99@gmail.com</p>
+        <p><strong>Telepon:</strong> 0858-1070-4588</p>
+        <p><strong>Alamat:</strong> Jl. Bandengan utara 1 no 4, Jakarta Utara</p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/6285810704588" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: underline;">Chat via WhatsApp</a></p>
+        <p><strong>Instagram:</strong> <a href="https://instagram.com/bintangfazalestari" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: underline;">@bintangfazalestari</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/bintangfazalestari" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: underline;">linkedin.com/in/bintangfazalestari</a></p>
+      </div>
+    
+      <div class="skills-section">
+        <h3>Kemampuan</h3>
+        <div class="skill">
+          <canvas class="circle" data-percent="90"></canvas>
+          <p>Menari</p>
+        </div>
+        <div class="skill">
+          <canvas class="circle" data-percent="85"></canvas>
+          <p>Komputer</p>
+        </div>
+        <div class="skill">
+          <canvas class="circle" data-percent="70"></canvas>
+          <p>Bahasa Inggris</p>
+        </div>
+        <div class="skill">
+          <canvas class="circle" data-percent="60"></canvas>
+          <p>Bahasa Jepang</p>
+        </div>
+      </div>
+    
+      <div class="social-links" aria-label="Link Sosial Media">
+        <a href="https://wa.me/6285810704588" target="_blank" title="WhatsApp" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://instagram.com/bintangfazalestari" target="_blank" title="Instagram" rel="noopener noreferrer">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com/in/bintangfazalestari" target="_blank" title="LinkedIn" rel="noopener noreferrer">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+    
+    <div class="right-section">
+      <header>
+        <h1>Bintang Faza Lestari</h1>
+        <p class="sub-title">Smp 63 Verniagaan</p>
+      </header>
+
+      <section>
+        <h2>Tentang Saya</h2>
+        <p>
+          Saya adalah seorang siswa yang bersekolah di SMK Pangeran Wijaya Kusuma, umur saya 18 tahun.
+        </p>
+      </section>
+
+      <section>
+        <h2>Pengalaman</h2>
+        <ul>
+          <li>Dinas Perumahan Rakyat dan Permukiman</li>
+          <li>CBD Pluit</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Pendidikan</h2>
+        <ul>
+          <li>SDN Penjaringan 08</li>
+          <li>SMP 63 Verniagaan X</li>
+          <li>SMK Pangeran Wijaya Kusuma</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Hobi</h2>
+        <ul>
+          <li>Menari</li>
+          <li>Menulis</li>
+          <li>Main raket</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll("canvas.circle").forEach(canvas => {
+      const ctx = canvas.getContext("2d");
+      const percent = canvas.dataset.percent;
+      const dpr = window.devicePixelRatio || 1;
+      const size = 80;
+      canvas.width = size * dpr;
+      canvas.height = size * dpr;
+      canvas.style.width = size + "px";
+      canvas.style.height = size + "px";
+      ctx.scale(dpr, dpr);
+
+      const center = size / 2;
+      const radius = center - 10;
+      const startAngle = -0.5 * Math.PI;
+      const endAngle = (percent / 100) * 2 * Math.PI + startAngle;
+
+      // Background circle (light pink)
+      ctx.lineWidth = 8;
+      ctx.strokeStyle = "#ffb6c1";
+      ctx.beginPath();
+      ctx.arc(center, center, radius, 0, 2 * Math.PI);
+      ctx.stroke();
+
+      // Foreground circle (white progress)
+      ctx.strokeStyle = "#fff";
+      ctx.beginPath();
+      ctx.arc(center, center, radius, startAngle, endAngle);
+      ctx.stroke();
+
+      // Text percentage
+      ctx.fillStyle = "#fff";
+      ctx.font = "bold 14px Poppins, sans-serif";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText(percent + "%", center, center);
+    });
+  </script>
+</body>
+</html>
